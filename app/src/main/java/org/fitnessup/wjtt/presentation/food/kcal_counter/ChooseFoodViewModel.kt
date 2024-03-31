@@ -1,9 +1,11 @@
-package org.fitnessup.wjtt.presentation.kcal_counter
+package org.fitnessup.wjtt.presentation.food.kcal_counter
 
 import android.app.Application
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.net.Uri
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.mlkit.common.model.DownloadConditions
 import com.google.mlkit.nl.translate.TranslateLanguage
@@ -11,18 +13,22 @@ import com.google.mlkit.nl.translate.Translation
 import com.google.mlkit.nl.translate.TranslatorOptions
 import kotlinx.coroutines.launch
 import org.fitnessup.wjtt.data.local.FitnessUPDB
+import org.fitnessup.wjtt.data.local.food.FoodDB
 import org.fitnessup.wjtt.data.remote.APP_ID
 import org.fitnessup.wjtt.data.remote.APP_KEY
 import org.fitnessup.wjtt.data.remote.ITEM_SPLITTER
 import org.fitnessup.wjtt.data.remote.RecipeItemShort
 import org.fitnessup.wjtt.data.remote.RecipeTranslatedSubData
 import org.fitnessup.wjtt.data.remote.RetrofitService
+import org.fitnessup.wjtt.domain.saveBitmap
 import java.util.Calendar
+import kotlin.random.Random
 
 class ChooseFoodViewModel(application: Application) : AndroidViewModel(application) {
 
     private val foodDao = FitnessUPDB.getInstance(application).foodDao()
     private val retrofit = RetrofitService.getInstance()
+    private val context by lazy { application.applicationContext }
 
     val listRecipes: MutableLiveData<List<RecipeItemShort?>?> =
         MutableLiveData<List<RecipeItemShort?>?>()
@@ -31,12 +37,38 @@ class ChooseFoodViewModel(application: Application) : AndroidViewModel(applicati
 
     val finishAddingFood = MutableLiveData<Boolean>()
 
+    val selectedImgLD = MutableLiveData<String?>()
+
     fun addFoodToDB(foodItem: RecipeItemShort, weight: Int) {
         val currentDate = Calendar.getInstance()
         val dateInMils = currentDate.timeInMillis
         val dateAsString = getCurrentDateAsYYYYMMDD(currentDate)
         viewModelScope.launch {
             foodDao.addFoodItem(foodItem.toFoodDB(weight, dateAsString, dateInMils))
+            finishAddingFood.postValue(true)
+        }
+    }
+
+    fun addFoodToDB(name:String, kcal:String, protein:String, fat:String, carb:String, weight: String) {
+        val currentDate = Calendar.getInstance()
+        val logo = selectedImgLD.value?:""
+        val dateInMils = currentDate.timeInMillis
+        val dateAsString = getCurrentDateAsYYYYMMDD(currentDate)
+        val newFoodItem = FoodDB(
+            0,
+            name,
+            logo,
+            dateAsString,
+            dateInMils,
+            weight.toInt(),
+            kcal.toDouble(),
+            protein.toDouble(),
+            fat.toDouble(),
+            carb.toDouble(),
+            true
+        )
+        viewModelScope.launch {
+            foodDao.addFoodItem(newFoodItem)
             finishAddingFood.postValue(true)
         }
     }
@@ -138,6 +170,41 @@ class ChooseFoodViewModel(application: Application) : AndroidViewModel(applicati
             append(day)
         }
         return answer.toString()
+    }
+
+    fun setupTeamImg(imgUri: Uri) {
+        viewModelScope.launch {
+            resetSelectedImg()
+            val imgName = setupImg(imgUri)
+            selectedImgLD.postValue(imgName)
+        }
+    }
+
+    fun resetSelectedImg(){
+        selectedImgLD.value = null
+    }
+
+    private suspend fun setupImg(imgUri: Uri):String? {
+        val imgName = getImgName(imgUri)
+        if (imgName != null) {
+            saveImgInMemory(imgUri, imgName)
+        }
+        return imgName
+    }
+
+    private suspend fun saveImgInMemory(uri: Uri, imgName: String) {
+        context.contentResolver.openInputStream(uri).use {
+            val bitmap = BitmapFactory.decodeStream(it)
+            context.saveBitmap(imgName, bitmap)
+        }
+    }
+
+    private fun getImgName(uri: Uri): String? {
+//        val regex = """(/media/[0-9].*)""".toRegex()
+        val randomPrefix = Random.nextInt()
+//        val imgNumber = regex.find(uri.toString())?.value?.split("/")?.get(2)
+//        return "$randomPrefix$imgNumber"
+        return randomPrefix.toString()
     }
 
 }

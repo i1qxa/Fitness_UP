@@ -1,4 +1,4 @@
-package org.fitnessup.wjtt.presentation.kcal_counter.rv
+package org.fitnessup.wjtt.presentation.food.kcal_counter.rv
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

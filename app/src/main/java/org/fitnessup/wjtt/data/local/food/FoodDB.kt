@@ -16,6 +16,7 @@ data class FoodDB(
     val proteinPerGram:Double,
     val fatPerGram:Double,
     val carbPerGram:Double,
+    val isLocal:Boolean
 ){
     val kcalTotal:Double
         get() = kcalPerGram*weightInGrams

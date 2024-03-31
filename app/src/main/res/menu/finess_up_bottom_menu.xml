@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/home_icon"
+        android:title="@string/home"  />
+    <item
+        android:id="@+id/foodFragment"
+        android:icon="@drawable/food"
+        android:title="@string/food" />
+
+    <item
+        android:id="@+id/sportFragment"
+        android:icon="@drawable/sport"
+        android:title="@string/sport" />
+
+    <item
+        android:id="@+id/statisticFragment"
+        android:icon="@drawable/statistic"
+        android:title="@string/statistics" />
+
+    <item
+        android:id="@+id/personFragment"
+        android:icon="@drawable/person_icon"
+        android:title="@string/person_info" />
+
+
+</menu>

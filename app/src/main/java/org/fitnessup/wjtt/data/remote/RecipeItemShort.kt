@@ -31,7 +31,8 @@ data class RecipeItemShort(
         calories.toDouble()/100,
         protein.toDouble()/100,
         fat.toDouble()/100,
-        carbs.toDouble()/100
+        carbs.toDouble()/100,
+        false
     )
 
     fun getDataForTranslate():String{

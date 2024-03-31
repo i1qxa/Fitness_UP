@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.food.kcal_counter.ChooseFoodFragment">
+    tools:context=".presentation.sport.SportFragment">
 
     <ImageView
         android:id="@+id/btnBack"
@@ -23,7 +23,7 @@
         app:layout_constraintStart_toEndOf="@id/btnBack"
         app:layout_constraintEnd_toStartOf="@id/btnSearch"
         app:layout_constraintTop_toTopOf="parent"
-        android:hint="@string/hint_et_food_name"
+        android:hint="@string/enter_training_name"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:minHeight="48dp"
@@ -41,42 +41,17 @@
         android:layout_marginHorizontal="10dp"
         />
 
-    <TextView
-        android:id="@+id/tvEmptyFoodList"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="@string/tv_empty_food_list"
-        android:layout_marginHorizontal="15dp"
-        android:gravity="center"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-        />
-
-    <ProgressBar
-        android:id="@+id/pbDietsLoading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:visibility="gone"
-        />
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvRecipeList"
+        android:id="@+id/rvTrainingsList"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etRecipeName"
+        app:layout_constraintTop_toBottomOf="@id/btnBack"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="10dp"
-        android:visibility="gone"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

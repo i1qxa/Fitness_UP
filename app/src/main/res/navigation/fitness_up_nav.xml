@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fitness_up_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="org.fitnessup.wjtt.presentation.home.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_foodFragment"
+            app:destination="@id/foodFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_personFragment"
+            app:destination="@id/personFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_sportFragment"
+            app:destination="@id/sportFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_statisticFragment"
+            app:destination="@id/statisticFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodFragment"
+        android:name="org.fitnessup.wjtt.presentation.food.FoodFragment"
+        android:label="@string/food"
+        tools:layout="@layout/fragment_food" >
+        <action
+            android:id="@+id/action_foodFragment_to_chooseFoodFragment"
+            app:destination="@id/chooseFoodFragment" />
+        <action
+            android:id="@+id/action_foodFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personFragment"
+        android:name="org.fitnessup.wjtt.presentation.person.PersonFragment"
+        android:label="@string/person_info"
+        tools:layout="@layout/fragment_person" />
+    <fragment
+        android:id="@+id/sportFragment"
+        android:name="org.fitnessup.wjtt.presentation.sport.SportFragment"
+        android:label="@string/sport"
+        tools:layout="@layout/fragment_sport" >
+        <action
+            android:id="@+id/action_sportFragment_to_trainingFragment"
+            app:destination="@id/trainingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/statisticFragment"
+        android:name="org.fitnessup.wjtt.presentation.statistics.StatisticFragment"
+        android:label="@string/statistics"
+        tools:layout="@layout/fragment_statistic" />
+    <fragment
+        android:id="@+id/chooseFoodFragment"
+        android:name="org.fitnessup.wjtt.presentation.food.kcal_counter.ChooseFoodFragment"
+        android:label="fragment_choose_food"
+        tools:layout="@layout/fragment_choose_food" >
+        <action
+            android:id="@+id/action_chooseFoodFragment_to_foodFragment"
+            app:destination="@id/foodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trainingFragment"
+        android:name="org.fitnessup.wjtt.presentation.sport.training.TrainingFragment"
+        android:label="fragment_training"
+        tools:layout="@layout/fragment_training" >
+        <argument
+            android:name="trainingId"
+            app:argType="integer" />
+    </fragment>
+</navigation>

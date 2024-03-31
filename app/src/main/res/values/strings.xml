@@ -26,4 +26,22 @@
     <string name="cancel">Отменить</string>
     <string name="save">Сохранить</string>
     <string name="enter_weight_in_grams">Укажите вес в граммах</string>
+    <string name="begin">Начать</string>
+    <string name="app_description">В приложении Fitness UP вы можете отслеживать свой прогресс благодаря информативным графикам. Выбрать готовый план тренировок или создать свой собственный. Отслеживать суточное потребление каллорий и макронутриентов</string>
+    <string name="food">Питание</string>
+    <string name="person_info">Личная информация</string>
+    <string name="sport">Спорт</string>
+    <string name="statistics">Статистика</string>
+    <string name="bmi">Индекс массы тела: %1$d</string>
+    <string name="current_weight">Текущий вес: %1$d</string>
+    <string name="height">Рост: %1$d</string>
+    <string name="empty_food">Сегодня вы еще не внесли ни одного приема пищи</string>
+    <string name="food_creation">Создание блюда</string>
+    <string name="kcal_100">ккал/100г</string>
+    <string name="protein_100">белки/100г</string>
+    <string name="fat_100">жиры/100г</string>
+    <string name="carb_100">углеводы/100г</string>
+    <string name="weight_in_grams">вес в граммах</string>
+    <string name="amount_repeat">%1$d Повторений</string>
+    <string name="enter_training_name">Введите название тренирровки</string>
 </resources>
