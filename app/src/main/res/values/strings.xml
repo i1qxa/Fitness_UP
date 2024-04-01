@@ -43,5 +43,7 @@
     <string name="carb_100">углеводы/100г</string>
     <string name="weight_in_grams">вес в граммах</string>
     <string name="amount_repeat">%1$d Повторений</string>
+    <string name="exercise_amount">%1$d Упражнений</string>
     <string name="enter_training_name">Введите название тренирровки</string>
+    <string name="hint_exercise_filter">Для поиска упражнений, введите название упражнения</string>
 </resources>

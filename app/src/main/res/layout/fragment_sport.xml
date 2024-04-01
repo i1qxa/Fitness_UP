@@ -16,30 +16,7 @@
         android:layout_margin="15dp"
         />
 
-    <EditText
-        android:id="@+id/etRecipeName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/btnBack"
-        app:layout_constraintEnd_toStartOf="@id/btnSearch"
-        app:layout_constraintTop_toTopOf="parent"
-        android:hint="@string/enter_training_name"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:minHeight="48dp"
-        android:inputType="text"
-        />
 
-    <ImageView
-        android:id="@+id/btnSearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/search_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/etRecipeName"
-        app:layout_constraintBottom_toBottomOf="@id/etRecipeName"
-        android:layout_marginHorizontal="10dp"
-        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTrainingsList"

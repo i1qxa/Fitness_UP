@@ -35,7 +35,7 @@ class TrainingRVAdapter :
                 }
             }
             amountExercises.text =
-            holder.itemView.context.getString(R.string.amount_repeat, item.amountExercises)
+            holder.itemView.context.getString(R.string.exercise_amount, item.amountExercises)
             totalDuration.text = item.totalTimeFormatted
             itemView.setOnClickListener {
                 onTrainingItemClickListener?.invoke(item.id)
