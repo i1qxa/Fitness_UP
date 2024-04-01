@@ -13,7 +13,7 @@ import com.fitlife.atfsd.ui.rv_training.TrainingRVAdapter
 import org.fitnessup.wjtt.R
 import org.fitnessup.wjtt.databinding.FragmentSportBinding
 
-const val TRAINING_ID = "training_id"
+const val TRAINING_ID = "trainingId"
 
 class SportFragment : Fragment() {
 

@@ -71,5 +71,17 @@
         <argument
             android:name="trainingId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_trainingFragment_to_videoInstructionFragment"
+            app:destination="@id/videoInstructionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoInstructionFragment"
+        android:name="org.fitnessup.wjtt.presentation.sport.instruction.VideoInstructionFragment"
+        android:label="fragment_video_instruction"
+        tools:layout="@layout/fragment_video_instruction" >
+        <argument
+            android:name="exerciseId"
+            app:argType="integer" />
     </fragment>
 </navigation>

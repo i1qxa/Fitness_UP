@@ -46,4 +46,8 @@
     <string name="exercise_amount">%1$d Упражнений</string>
     <string name="enter_training_name">Введите название тренирровки</string>
     <string name="hint_exercise_filter">Для поиска упражнений, введите название упражнения</string>
+    <string name="rest">Отдых</string>
+    <string name="repeat_remaining">Повторений осталось</string>
+    <string name="start">Начать</string>
+    <string name="finish">Завершить</string>
 </resources>
