@@ -20,7 +20,7 @@ class FoodViewModel(application: Application) : AndroidViewModel(application) {
         answer.apply {
             append(year)
             append("/")
-            append(month)
+            append(month+1)
             append("/")
             append(day)
         }

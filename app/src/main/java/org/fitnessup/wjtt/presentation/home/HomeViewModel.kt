@@ -1,7 +1,13 @@
 package org.fitnessup.wjtt.presentation.home
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+import org.fitnessup.wjtt.data.local.FitnessUPDB
 
-class HomeViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+class HomeViewModel(application: Application) : AndroidViewModel(application) {
+
+    private val personDao = FitnessUPDB.getInstance(application).personDao()
+
+    val personInfoLD = personDao.getLastPersonData()
+
 }

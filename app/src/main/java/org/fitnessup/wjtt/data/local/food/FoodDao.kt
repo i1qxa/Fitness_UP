@@ -5,6 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import org.fitnessup.wjtt.domain.ChartData
 import org.fitnessup.wjtt.domain.FoodCommonInfo
 
 @Dao
@@ -17,6 +18,10 @@ interface FoodDao {
             "SUM(fatPerGram*weightInGrams) as fat, SUM(carbPerGram*weightInGrams) " +
             "as carb, date FROM fooddb WHERE dateInMils>:startDay AND dateInMils<:endDay GROUP BY date")
     fun getFoodCommonInfoForPeriod(startDay:Long, endDay:Long):LiveData<List<FoodCommonInfo>>
+
+    @Query("SELECT date as date, SUM(kcalPerGram*weightInGrams) as value FROM fooddb GROUP BY date ORDER BY dateInMils")
+    fun getFoodDataForChart():LiveData<List<ChartData>>
+
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addFoodItem(foodItem:FoodDB)

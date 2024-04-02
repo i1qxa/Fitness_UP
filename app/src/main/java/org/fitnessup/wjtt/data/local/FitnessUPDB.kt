@@ -13,13 +13,16 @@ import org.fitnessup.wjtt.data.local.treinings.Treinings
 import kotlinx.coroutines.InternalCoroutinesApi
 import org.fitnessup.wjtt.data.local.food.FoodDB
 import org.fitnessup.wjtt.data.local.food.FoodDao
+import org.fitnessup.wjtt.data.local.person.PersonDB
+import org.fitnessup.wjtt.data.local.person.PersonDao
 
 @Database(
     entities = [
         ExerciseItems::class,
         ExerciseTypesDB::class,
         Treinings::class,
-        FoodDB::class
+        FoodDB::class,
+        PersonDB::class
     ], exportSchema = false,
     version = 1
 )
@@ -29,6 +32,8 @@ abstract class FitnessUPDB : RoomDatabase() {
     abstract fun exerciseTypesDao(): ExerciseTypesDao
     abstract fun foodDao():FoodDao
     abstract fun trainingsDao(): TrainingsDao
+
+    abstract fun personDao():PersonDao
 
     companion object {
         private var INSTANCE: FitnessUPDB? = null

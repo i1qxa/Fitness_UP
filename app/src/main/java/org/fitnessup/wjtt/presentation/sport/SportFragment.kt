@@ -33,6 +33,7 @@ class SportFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         observeViewModel()
+        setupBtnBackClickListener()
     }
 
     private fun observeViewModel(){
@@ -58,6 +59,12 @@ class SportFragment : Fragment() {
                 RecyclerView.VERTICAL,
                 false
             )
+        }
+    }
+
+    private fun setupBtnBackClickListener(){
+        binding.btnBack.setOnClickListener {
+            findNavController().navigate(R.id.action_sportFragment_to_homeFragment)
         }
     }
 

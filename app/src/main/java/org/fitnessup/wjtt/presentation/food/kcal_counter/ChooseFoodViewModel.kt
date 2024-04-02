@@ -1,7 +1,6 @@
 package org.fitnessup.wjtt.presentation.food.kcal_counter
 
 import android.app.Application
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.lifecycle.AndroidViewModel
@@ -165,7 +164,7 @@ class ChooseFoodViewModel(application: Application) : AndroidViewModel(applicati
         answer.apply {
             append(year)
             append("/")
-            append(month)
+            append(month+1)
             append("/")
             append(day)
         }
@@ -200,10 +199,7 @@ class ChooseFoodViewModel(application: Application) : AndroidViewModel(applicati
     }
 
     private fun getImgName(uri: Uri): String? {
-//        val regex = """(/media/[0-9].*)""".toRegex()
         val randomPrefix = Random.nextInt()
-//        val imgNumber = regex.find(uri.toString())?.value?.split("/")?.get(2)
-//        return "$randomPrefix$imgNumber"
         return randomPrefix.toString()
     }
 

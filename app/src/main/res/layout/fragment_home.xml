@@ -63,7 +63,7 @@
         android:id="@+id/tvBmi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/bmi"
+        android:text="@string/bmi_with_params"
         android:textColor="@color/white"
         android:textStyle="italic"
         app:layout_constraintStart_toEndOf="@id/bmiIcon"

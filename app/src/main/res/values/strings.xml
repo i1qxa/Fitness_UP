@@ -1,10 +1,5 @@
 <resources>
     <string name="app_name">Fitness UP</string>
-    <string name="home">Домой</string>
-    <string name="beauty">Красота</string>
-    <string name="diets">Диеты</string>
-    <string name="fitness">Фитнес</string>
-    <string name="self_care">Здоровье</string>
     <string name="hint_et_food_name">Введите название блюда</string>
     <string name="tv_empty_food_list">Список блюд пуст. Найдите необходимое блюдо используя строку поиска или создайте самостоятельно</string>
     <string name="tv_request_empty">По вашему запросу ничего не найдено</string>
@@ -12,13 +7,7 @@
     <string name="equipment">Оборудование: %1$s</string>
     <string name="secondary_muscles">Вспомогательные мышцы: %1$s</string>
     <string name="instruction">Инструкция</string>
-    <string name="yoga">Йога</string>
-    <string name="favorite">Избранные</string>
-    <string name="poses">Позы</string>
     <string name="error_loading_data">Ошибка загрузки данных. Повторите запрос позже</string>
-    <string name="you_favorite_exercise_list_is_empty">Ваш список любимых упражнений пуст</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="kcal">Ккал</string>
     <string name="protein">Белки</string>
     <string name="fat">Жиры</string>
@@ -32,9 +21,9 @@
     <string name="person_info">Личная информация</string>
     <string name="sport">Спорт</string>
     <string name="statistics">Статистика</string>
-    <string name="bmi">Индекс массы тела: %1$d</string>
-    <string name="current_weight">Текущий вес: %1$d</string>
-    <string name="height">Рост: %1$d</string>
+    <string name="bmi_with_params">Индекс массы тела: %1$s</string>
+    <string name="current_weight">Текущий вес: %1$s кг</string>
+    <string name="height">Рост: %1$s м</string>
     <string name="empty_food">Сегодня вы еще не внесли ни одного приема пищи</string>
     <string name="food_creation">Создание блюда</string>
     <string name="kcal_100">ккал/100г</string>
@@ -50,4 +39,10 @@
     <string name="repeat_remaining">Повторений осталось</string>
     <string name="start">Начать</string>
     <string name="finish">Завершить</string>
+    <string name="BMI">ИМТ</string>
+    <string name="weight">Вес(кг)</string>
+    <string name="height_simple">Рост(метры)</string>
+    <string name="home">Главная</string>
+    <string name="hint_statistic">Выберите характеристику прогресс которой вы хотите отследить</string>
+    <string name="not_enouth_data">Не достаточно данных для построения графика</string>
 </resources>

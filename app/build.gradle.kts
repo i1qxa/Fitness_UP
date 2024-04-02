@@ -71,5 +71,6 @@ dependencies {
     implementation (libs.translate)
     implementation(libs.coil)
     implementation (libs.translate)
+    implementation ("com.github.AAChartModel:AAChartCore-Kotlin:7.2.1")
 
 }
