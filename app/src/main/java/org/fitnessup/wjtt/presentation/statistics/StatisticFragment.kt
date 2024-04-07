@@ -39,8 +39,6 @@ class StatisticFragment : Fragment() {
     private fun observeViewModel(){
 
         viewModel.selectedChart.observe(viewLifecycleOwner){
-//            chartName = if (it==1) "Изменение веса"
-//            else "Суточное потребление каллорий"
             when(it){
                 1 -> {
                     binding.weight.background = activeBtnDrawable
